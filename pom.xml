@@ -55,9 +55,23 @@
                 </configuration>
             </plugin>
 
+            <!-- Configure Spring Boot plugin to produce an executable JAR on package -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Explicitly set the main class so the plugin can create an executable jar -->
+                    <mainClass>com.example.demo.Application</mainClass>
+                    <!-- Make the jar executable on supported platforms -->
+                    <executable>true</executable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -12,6 +12,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public Map<String, String> hello() {
-        return Map.of("message", "Hello, world");
+        return Map.of("message", "Hi, Initiate UP Project v 1.0.0");
     }
 }
